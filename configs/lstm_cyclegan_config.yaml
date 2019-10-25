@@ -1,0 +1,29 @@
+NUM_GPUS: 1
+MODEL: "lstm_cycle_gan"
+DATALOADER:
+  WORKERS: 4
+  SHUFFLE: True
+  FIRST_ROBOT_PATH: "/home/fatih/Desktop/Collab2/fixed_with4_first_3D.npz"
+  SECOND_ROBOT_PATH: "/home/fatih/Desktop/Collab2/fixed_with4_second_3D.npz"
+GENERATOR:
+  BASE_LR: 0.0002
+  STEP_SIZE: 100
+  STEP_GAMMA: 0.5
+DISCRIMINATOR:
+  BASE_LR: 0.00001
+  STEP_SIZE: 20
+  STEP_GAMMA: 0.5
+TRAIN:
+  TARGET_LENGTH: 10
+  SIMILARITY_RATE: 0.01
+  BATCH_SIZE: 32
+  SAVE_AT: 2
+  START_EPOCH: 0
+  MAX_EPOCH: 100
+  LOAD_WEIGHTS: ""
+  SAVE_WEIGHTS: ""
+  DISCRIMINATOR_CRITERION_REDUCTION: "mean"
+  CYCLE_LOSS_REDUCTION: "mean"
+  EXAMPLE_SAVE_PATH: "/home/fatih/my_git/sensorgan/outputs/pix2pix_examples/"
+  GRAPH_SAVE_PATH: "/home/fatih/my_git/sensorgan/outputs/pix2pix_graphs/"
+OUTPUT_DIR: "/home/fatih/Desktop/CollabMSE/"
